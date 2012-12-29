@@ -23,3 +23,11 @@ adminuser.skip_confirmation!
 adminuser.save
 adminuser.add_role :admin
 puts 'user: ' << adminuser.firstname + ' ' + adminuser.lastname + ' has admin role'
+
+puts 'SUPER ADMIN'
+superadmin = AdminUser.new({    :email => ENV['SUPERADMIN_EMAIL'].dup,
+                                :password => ENV['SUPERADMIN_PASSWORD'].dup,
+                                :password_confirmation => ENV['SUPERADMIN_PASSWORD'].dup
+                         })
+superadmin.save
+puts 'super admin: ' << superadmin.email
