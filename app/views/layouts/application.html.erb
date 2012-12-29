@@ -1,14 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Ludowebrails</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= content_for?(:title) ? yield(:title) : ENV['APP_NAME'] %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : ENV['APP_NAME'] %>">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Christian Brel">
 
-<%= yield %>
+    <!-- Le styles --> 
+    <%= stylesheet_link_tag    "application", :media => "all" %>
 
-</body>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <%= javascript_include_tag    "application.js" %>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+
+    <%= render "layouts/navigation" %>
+
+    <% if flash[:notice] %>
+    <div class="container">
+    	<div class="row">
+			<div class="span8 offset2">
+				<div class="alert alert-success">
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+					<%= flash[:notice] %>
+				</div>
+			</div>
+		</div>
+	</div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+    <div class="container">
+    	<div class="row">
+			<div class="span8 offset2">
+		    	<div class="alert alert-warning">
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+					<%= flash[:alert] %>
+				</div>
+			</div>
+		</div>
+	</div>
+    <% end %>
+    
+    <% if flash[:error] %>
+    <div class="container">
+    	<div class="row">
+			<div class="span8 offset2">
+		    	<div class="alert alert-error">
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+					<%= flash[:error] %>
+				</div>
+			</div>
+		</div>
+	</div>
+    <% end %>
+
+	<!-- Main content -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+    		<%= yield %>
+    		</div>
+    	</div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; LudoWeb / 2012<% todayDate = Date.today; if(todayDate.year > 2012) -%> - <%= todayDate.year %><% end -%> <%= t('developedby') %> <a href="http://www.christianbrel.fr/">Christian Brel</a></p>
+      </footer>
+
+    </div>
+
+  </body>
 </html>
