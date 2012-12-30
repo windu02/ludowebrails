@@ -16,3 +16,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore auto generated README.rdoc
+/README.rdoc.bak
