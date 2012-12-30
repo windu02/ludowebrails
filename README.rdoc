@@ -1,3 +1,5 @@
 == Welcome to LudoWeb
 
+LudoWeb is web app allowing "ludothèques" to manage users, games, toys etc...
+
 More info later.
