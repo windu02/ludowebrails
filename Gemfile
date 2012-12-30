@@ -47,4 +47,7 @@ gem 'ledermann-rails-settings', :require => 'rails-settings'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
-gem "figaro", ">= 0.5.0"
+gem 'figaro', '>= 0.5.0'
+
+# Integration with travis.org
+gem 'rake', :group => :test
