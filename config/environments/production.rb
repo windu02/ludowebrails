@@ -65,7 +65,7 @@ Ludowebrails::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
-    config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] }
+    config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] + ':' + ENV['PORT'] }
     # ActionMailer Config
     # Setup for production - deliveries, no errors raised
     config.action_mailer.delivery_method = :smtp

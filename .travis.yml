@@ -3,6 +3,8 @@ rvm:
   - 1.9.3
 env:
   - DB=sqlite
+  - APP_HOST=localhost
+  - PORT=9292
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare

@@ -36,5 +36,5 @@ Ludowebrails::Application.configure do
   config.active_support.deprecation = :stderr
   
     # ActionMailer Config
-    config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] }
+    config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] + ':' + ENV['PORT'] }
 end
