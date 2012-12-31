@@ -19,3 +19,6 @@
 
 # Ignore auto generated README.rdoc
 /README.rdoc.bak
+
+# Ignore travis example file
+/travis.example
