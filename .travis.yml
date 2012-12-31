@@ -2,9 +2,7 @@ language: ruby
 rvm:
   - 1.9.3
 env:
-  - DB=sqlite
-  - APP_HOST=localhost
-  - PORT=9292
+  - DB=sqlite 
 script: 
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
@@ -12,9 +10,11 @@ script:
   - bundle exec rake cucumber
 before_script:
   - "export DISPLAY=:99.0"
+  - "export APP_HOST=localhost"
+  - "export PORT=9292"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-  - rackup &
+  - "rackup &"
   - sleep 3
 
 bundler_args: --binstubs=./bundler_stubs
