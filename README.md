@@ -7,3 +7,7 @@ More info later.
 ### Current build
 
 [![Build Status](https://secure.travis-ci.org/windu02/ludowebrails.png?branch=master)](https://travis-ci.org/windu02/ludowebrails)
+
+### Dependencies status
+
+[![Dependency Status](https://gemnasium.com/windu02/ludowebrails.png)](https://gemnasium.com/windu02/ludowebrails)
