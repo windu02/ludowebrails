@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.11'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -28,7 +28,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "better_errors", :group => :development
 gem "binding_of_caller", :group => :development
 
-gem 'activeadmin'
+gem 'activeadmin', "~> 0.5.1"
 gem 'meta_search'
 
 group :production do
